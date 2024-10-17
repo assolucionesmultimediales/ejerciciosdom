@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio 5</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        font-family: sans-serif;
+        display: grid;
+        justify-content: center;
+        text-align: center;
+    }
+
+header{
+    color: rgb(193, 155, 229);
+    font-size: xx-large;
+    margin-top: 40%;
+    margin-bottom: 20%;
+}
+
+#boton{
+    color: rgb(193, 155, 229);
+    background-color: black;
+    border-radius: 10px;
+    border: solid rgb(193, 155, 229);
+    font-size: larger;
+    padding: 5%;
+    margin-bottom: 20%;
+    cursor: pointer;
+   
+}
+#muestro{
+    color: rgb(193, 155, 229);
+    font-size: xx-large;
+
+}
+
+
+</style>
+
+
+<body>
+    <header>✧ ೃ༄*ੈ✩ Soy un fidget toy digital ✩ੈ*ೃ༄ ✧</header>
+    <button id="boton">*ೃ.⋆ Sacate la ansiedad ⋆.ೃ࿔*</button>
+    <div id="muestro"></div>
+
+
+    <script>
+/* Hacer un contador de clics que consiste en un programa con un botòn y un div, y se muestra en el div la cantidad de veces que se hace clic en el botòn.*/
+
+
+var boton = document.getElementById("boton"); // armo variables para no tener que escribir todo esto de nuevo jeje
+var muestroclicks = document.getElementById("muestro");
+var contador = 0;
+boton.onclick = function(){ //aca le indico que tiene que hacer cuando el id boton le dan click
+    contador++ ; //suma uno por cada click
+    muestroclicks.innerHTML = contador; // muestro el contador en el contenido del div
+}
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

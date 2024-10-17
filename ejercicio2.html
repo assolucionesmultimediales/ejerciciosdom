@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio2</title>
+    <style>
+        body {
+            background-color: black;
+            display: grid;
+            justify-content: center;
+        }
+        #cuadrado {
+            width: 400px;
+            height: 400px;
+            background: rgb(242,45,144);
+            background: linear-gradient(0deg, rgba(242,45,144,1) 0%, rgba(175,24,187,1) 49%, rgba(95,20,156,1) 100%);
+            margin: 20px 0;
+            border-radius: 15px;
+        }
+        button {
+            margin-top: 45%;
+            padding: 4%;
+            min-width: 100px; 
+            text-align: center; 
+            font-size: large;
+            border: solid 4px white;
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+<button id="boton">Ocultar</button>
+<div id="cuadrado"></div>
+
+<script>
+document.getElementById("boton").onclick = function(){
+    var cuadrado = document.getElementById("cuadrado");
+    var boton = document.getElementById("boton");
+
+    if (cuadrado.style.display == "none") {
+        cuadrado.style.display = "block";
+        boton.innerHTML = "ocultar";
+    } else {
+        cuadrado.style.display = "none";
+        boton.innerHTML = "Mostrar";
+    }
+}
+</script>
+</body>
+</html>

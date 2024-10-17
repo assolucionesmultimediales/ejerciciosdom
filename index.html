@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos DOM</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; 
+        margin: 0;
+        flex-direction: column; 
+        font-family: sans-serif;
+        background-color: black;
+        color: white;
+    }
+
+    h1{
+        font-size: xx-large;
+    }
+
+    #lista {
+        margin-top: 2%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        height: 50%;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        margin: 10px 0;
+
+    }
+
+    .ejemplos {
+        text-decoration: none;
+        color: rgb(152, 152, 225);
+        font-size: larger;
+    }
+
+    .ejemplos:hover{
+        text-decoration: underline;
+    }
+
+</style>
+<body>
+    <h1>Ejemplos DOM</h1>
+    <div id="lista"></div>
+
+    <script>
+        // Accedo al div con el id 'lista' y luego creo un ul que contendrá la lista de ejemplos
+        const lista = document.getElementById("lista");
+        let listaEjemplos = document.createElement("ul");
+
+        // Utilizo un for para crear 6 li con sus respectivos enlaces (a)
+        for (let i = 0; i < 6; i++) {
+            let li = document.createElement("li"); // Creo el elemento li
+            let ejemplo = document.createElement("a"); // Creo el enlace a
+
+            // Configuro el texto y el enlace
+            ejemplo.textContent = "Ir al ejercicio " + (i + 1);
+            ejemplo.setAttribute("href", "./ejercicio" + (i + 1) + ".html");
+            ejemplo.setAttribute("class", "ejemplos"); // Les pongo una clase a los enlaces
+            
+            li.appendChild(ejemplo); // Añado el enlace dentro del li
+            listaEjemplos.appendChild(li); // Añado el li a la lista (ul)
+        }
+
+        // Meto la lista dentro del div 'lista'
+        lista.appendChild(listaEjemplos);
+    </script>
+</body>
+</html>

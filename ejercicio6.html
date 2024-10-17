@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    h1{
+        color:#4586EF  ;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        margin-left: 33%;
+        margin-top: 3%;
+    }
+   
+    #mezcla{
+        margin-left: 38%;
+        margin-top: 5%;
+    }
+
+    .botonera{
+    margin-top: 5%;
+    margin-left: 33%;
+    }
+
+    .botonera2{
+        margin-top: 5%;
+        margin-left: 23%;
+
+    }
+
+    .boton2{
+        display: inline-block;
+    font-size: xx-large;
+    padding: 2%;
+    margin-left: 2%;
+    border: none;
+    color:#f2eed1  ;
+    cursor: pointer;
+    border-radius: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    }
+
+    .boton{
+    display: inline-block;
+    font-size: xx-large;
+    padding: 2%;
+    margin-left: 2%;
+    border: none;
+    color:#f2eed1 ;
+    cursor: pointer;
+    border-radius: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+</style>
+
+    <body class="fondo" style="background-color:#f2eed1;">
+
+        <h1>Aprendamos los colores primarios</h1>
+        
+     <div class="botonera">
+        
+            <button class="boton" style="background-color:#d43131;"> Rojo </button>
+            <button class="boton" style="background-color:#f9c970;"> Amarillo </button>
+            <button class="boton" style="background-color:#1d0b8d;">Azul</button>
+          
+        
+        </div>
+
+        <h1 id="mezcla">Y si los mezclamos?</h1>
+
+        <div class="botonera2">
+        
+            <button id="naranja" class="boton2" style="background-color:#d43131;"> Rojo y Amarillo </button>
+            <button id="verde"   class="boton2" style="background-color:#f9c970;"> Amarillo y Azul </button>
+            <button id="violeta"  class="boton2" style="background-color:#1d0b8d;">Azul y Rojo</button>
+          
+        
+        </div>
+
+        <script>
+            //defino las variables
+             var boton = document.getElementsByClassName("boton");
+             var fondo = document.getElementsByClassName("fondo");
+
+             for(i=0 ; i<boton.length ; i++){    // recorro un for de 4 botones para que todos sean funcionales
+                 boton[i].onclick = function(){
+                 var atributocolor = this.getAttribute("style"); //hay que utilizar el this para que se le aplique a todos los botones
+                 fondo[0].setAttribute("style",atributocolor);
+    }
+}
+            for(i=0 ; i<boton.length ; i++){
+             boton[i].onmouseout = function(){
+             fondo[0].setAttribute("style","background-color:#f2eed1;" );
+    }
+}
+        
+        //segunda botonera
+        var boton2 = document.getElementsByClassName("boton2");
+
+        // boton rojo y amarillo
+        boton2[0].onclick = function(){
+            boton2[0].setAttribute("style","background-color:#F37B03;");
+            boton2[0].innerHTML = "Naranja";
+            fondo[0].setAttribute("style","background-color:#FF8D33;");
+        }
+        boton2[0].onmouseout = function(){
+            fondo[0].setAttribute("style","background-color:#f2eed1;");
+            boton2[0].innerHTML = "Rojo y Amarillo";
+        }
+                 
+        // boton amarillo y azul
+        boton2[1].onclick = function(){
+            boton2[1].setAttribute("style","background-color:#3A6414;");
+            boton2[1].innerHTML = "Verde";
+            fondo[0].setAttribute("style","background-color:#46D55A;");  
+        }
+        boton2[1].onmouseout = function(){
+            fondo[0].setAttribute("style","background-color:#f2eed1;");
+            boton2[1].innerHTML = "Amarillo y Azul";
+        }
+
+        //boton azul y rojo
+        boton2[2].onclick = function(){
+            boton2[2].setAttribute("style","background-color:#3C225E;");
+            boton2[2].innerHTML = "Violeta";
+            fondo[0].setAttribute("style","background-color:#8546D5;");    
+        }
+        
+        boton2[2].onmouseout = function(){
+            fondo[0].setAttribute("style","background-color:#f2eed1;");
+            boton2[2].innerHTML = "Azul y Rojo";
+        }
+
+
+        
+        </script>
+</body>
+</html>
